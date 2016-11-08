@@ -1,5 +1,9 @@
 # Reactive Programming
 
+## Links
+* http://www.reactivemanifesto.org
+* http://www.agiledeveloper.com/codesamples
+
 ## What and why
 * Rehashed programming model that emphasizes on scalability and response
 * A way to build a scalable architecture that's resilient and quick to react to stimuli
@@ -153,3 +157,7 @@ The above will just drop whatever was given in between (i.e., when you were stil
   * network/database failures
   * provide redundancies across geographical locations
   * load related failures
+* handling backpressure
+* using circuit breakers
+* improving performance using parallelization
+* acknowledge the CAP theorem
