@@ -120,13 +120,22 @@ Most simple stream examples have very low Q: meaning everything else has to go w
   * `IntStream.iterate(0, i > i+1).limit(n).sum()`
   * `IntStream.range(0,n).sum()`
 
+## Locality
+* locality is the elephant in the room
+* parallelism only wins when we can keep the CPUs busy doing useful work
+  * waiting for cache misses is not useful work
+* memory bandwidth is often the limiting factor on many systems
+* array-based, numeric problems parallelize best
+
 ## Encounter order
 * some operations have semantics tied to encounter order
   * order implied by the source
   * some sources have no defined encounter order (eg hashset)
-  * operations like limit, split, 
-
-...
+  * operations like limit, split and findFirst are tied to encounter order
+  * less exploitable parallelism
+* sometimes the encounter order is meaningful, sometimes not
+  * call .unordered() to indicate order is not meaningful to you
+  * operations like limit(), skip() and firstFirst() will optimize in the presence of unordered sources
 
 ## Merging
 * for some operations (sum, max), the merge is really cheap
@@ -136,6 +145,14 @@ Most simple stream examples have very low Q: meaning everything else has to go w
   * cost of merging overwhelms the parallelism advantage
 
 Can be A LOT slower that a non parallel implementation
+
+## Parallel streams
+* any of the following factors can undermine speedup
+  * NQ is insufficiently high
+  * cache-miss ratio is too high
+  * source is expensive to split
+  * result combination cost is too high
+  * pipeline uses encounter-order sensitive operations
 
 ## Conclusions
 * strams are cool
