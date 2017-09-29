@@ -71,7 +71,7 @@ The server should assume nothing about the client
 * authentication and authorization don't tell which resource you want
 * resource ID belongs in the URL, not the auth
 
-## Authentication scheems
+## Authentication schemes
 * if you don't need 2FA, basic over HTTPS still works
 * consider piggybacking on existing logins (Google, Facebook, Twitter, etc)
 * three-legged oAuth, OpenID, JWT
