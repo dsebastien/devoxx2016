@@ -48,7 +48,7 @@ Kafka uses a leadeR/follower for cluster distribution: there will be an elected 
 Can send messages to a topic (producers) and get messages from a topic (consumers).
 
 * topic: logical name with 1 or more partitions.
-* tartition: parts of a topic; allow to parallelize the processing for a given topic on multiple nodes
+* partition: parts of a topic; allow to parallelize the processing for a given topic on multiple nodes
   * are replicated in the cluster (managed by Kafka itself)
   * ordering is guaranteed for a partition
 
