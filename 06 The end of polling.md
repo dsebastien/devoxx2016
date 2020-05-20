@@ -111,7 +111,7 @@ Yet, the current implementations of EventSource object in JavaScript (base objec
 
 One workaround is to pass values through query params.
 
-Related article: http://streamdata.io/blog/push-sse-vs-websockets/
+Related article: https://apifriends.com/api-streaming/push-sse-vs-websockets/
 
 ## Disconnection detection
 When a client is connected to the server via SSE, the server is not notified if the client disconnects. Disconnection will be detected by the server only when trying to send data to the client, and getting an error report mentioning that the connection was lost.
@@ -120,4 +120,4 @@ This is problematic, so we considered different solutions which will be presente
 
 To address this issue, we can set up a heartbeat mechanism sent by the server at regular intervals. With SSE, if you send a blank character, it does not induce network overload or additional processing at the client level, and simply will detect disconnection without waiting for data to be sent.
 
-Related article: http://streamdata.io/blog/push-sse-vs-websockets/
+Related article: https://apifriends.com/api-streaming/push-sse-vs-websockets/
